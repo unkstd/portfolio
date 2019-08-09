@@ -1,0 +1,32 @@
+footer {
+  background: #ffffff;
+  color: black;
+  font-family: "Montserrat";
+  font-size: 18px;
+  text-align: center;
+  padding: 25px 10px;
+  a {
+    color: black;
+  }
+  .socials {
+    display: flex;
+    width: 30%;
+    margin: 10px auto 0;
+    justify-content: center;
+    a {
+      margin-right: 20px;
+      &:last-child {
+        margin: 0;
+      }
+      svg {
+        width: 28px;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  footer {
+    background: #ececec;
+  }
+}

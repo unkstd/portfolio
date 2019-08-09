@@ -1,0 +1,20 @@
+@import "./secondary/keyframes";
+
+.app {
+  opacity: 0;
+}
+
+.app.loaded {
+  animation: pushFront 2.5s 1s cubic-bezier(0, 0.93, 0.48, 1);
+  transition-delay: 1s;
+  opacity: 1;
+}
+
+@import "./secondary/secondary";
+@import "./secondary/preloader";
+@import "./secondary/contacts";
+
+@import "./primary/header";
+@import "./primary/hero";
+@import "./primary/content";
+@import "./primary/footer";
