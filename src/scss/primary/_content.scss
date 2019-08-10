@@ -5,9 +5,6 @@ section {
     margin: 0 auto;
     .sectionName {
       color: #ffffff;
-      font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
-        sans-serif;
       font-size: 36px;
       &:after {
         content: ".";
@@ -24,7 +21,7 @@ section {
           height: 300px;
           background-color: #0f0f0f;
           overflow: hidden;
-          background-image: url("../assets/img/emptyThumbnail.svg");
+          background-image: url("../assets/img/projects/emptyThumbnail.svg");
           &_wrapper {
             width: 100%;
             height: 100%;
@@ -69,9 +66,6 @@ section {
               transition: all 0.35s ease-out;
               .center {
                 .title {
-                  font-family: "Montserrat", -apple-system, BlinkMacSystemFont,
-                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-                    "Helvetica Neue", sans-serif;
                   font-size: 24px;
                 }
                 i {
@@ -79,18 +73,13 @@ section {
                   font-style: italic;
                   font-weight: lighter;
                   font-size: 14px;
-                  font-family: "Montserrat", -apple-system, BlinkMacSystemFont,
-                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-                    "Helvetica Neue", sans-serif;
+                  
                 }
                 .desc {
                   width: 100%;
                   padding: 10px 0 40px;
                   ul {
                     li {
-                      font-family: "Montserrat", -apple-system,
-                        BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-                        Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
                       &:before {
                         content: "⦁";
                         margin-right: 10px;
@@ -105,9 +94,6 @@ section {
                   padding: 10px 25px 8px 21px;
                   width: 100px;
                   color: black;
-                  font-family: "Montserrat", -apple-system, BlinkMacSystemFont,
-                    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-                    "Helvetica Neue", sans-serif;
                   text-align: center;
                   text-decoration: none;
                   font-size: 16px;
@@ -149,7 +135,7 @@ section {
     max-width: none;
     width: 100%;
     .sectionName {
-      width: calc(100% - 120px);
+      width: 100%;
       padding: 0 60px;
       text-align: center;
     }

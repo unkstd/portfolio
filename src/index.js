@@ -3,9 +3,10 @@ import "./scss/style.scss";
 
 const THREE = require("three");
 const noise = require("perlin").noise;
-import ScrollReveal from 'scrollreveal';
+import ScrollReveal from "scrollreveal";
+import { TweenMax } from "gsap";
 
-setTimeout(() => {
+setTimeout(() => { // Sphere
   if (document.getElementById("heroGeometry")) {
     const renderer = new THREE.WebGLRenderer({
       canvas: document.getElementById("heroGeometry"),
@@ -41,11 +42,11 @@ setTimeout(() => {
       let time = performance.now() * 0.0003,
         k = 10;
 
-      sphere.geometry.vertices.forEach(p => {
+      sphere.geometry.vertices.map(p => {
         p.normalize().multiplyScalar(
           1 + 0.2 * noise.perlin3(p.x + k + time, p.y * k, p.z * k)
         );
-      });
+      })
 
       sphere.geometry.computeVertexNormals();
       sphere.geometry.normalsNeedUpdate = true;
@@ -68,9 +69,11 @@ setTimeout(() => {
 }, 700);
 
 window.onload = () => {
+  window.scrollTo(0, 0); // Reset scrolled
   /****
    * Preloader
    */
+
   document.getElementById("preloader").classList.add("opacity");
   setTimeout(() => {
     document.getElementById("preloader").classList.add("hidden");
@@ -80,15 +83,7 @@ window.onload = () => {
   /****
    * Animations
    */
-  document.querySelectorAll("header nav ul li").forEach((li, index) => {
-    li.style = `
-      animation-name: showingToTop;
-      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-      animation-duration: ${1 * index + 1 + 10 / 10}s;
-      animation-delay: 0.5s;
-    `;
-  });
-  
+
   ScrollReveal().reveal(
     ".sectionName",
     {
@@ -129,19 +124,72 @@ window.onload = () => {
     150
   );
 
+  TweenMax.fromTo(
+    document.getElementsByClassName("header_logo"),
+    0.6,
+    {
+      css: {
+        opacity: "0"
+      }
+    },
+    {
+      css: {
+        opacity: "1"
+      }
+    }
+  ).delay(3.5);
+
   document.querySelectorAll(".hero .title span").forEach((block, index) => {
-    block.style = `
-      animation-name: showingToTop;
-      animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-      animation-duration: ${0.5 * index + 20 / 10}s;
-      animation-delay: 1s;
-    `;
+    TweenMax.fromTo(
+      block,
+      1,
+      {
+        ease: Expo.easeOut,
+        css: {
+          transform: "translateY(20px)",
+          opacity: "0"
+        }
+      },
+      {
+        ease: Expo.easeOut,
+        css: {
+          transform: "translateY(0)",
+          opacity: "1"
+        }
+      }
+    ).delay(0.05 * index + 10 / 10 + 1.5);
   });
 
   /****
    * Slide down function
    */
+
   document.getElementById("slideDown").addEventListener("click", () => {
     window.scrollTo(0, window.innerHeight);
+  });
+
+  /****
+   * Scrollbar
+   */
+
+  window.addEventListener("scroll", () => {
+    let getDocHeight = () => {
+      return Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight,
+        document.body.clientHeight,
+        document.documentElement.clientHeight
+      );
+    };
+    let ratio =
+      window.scrollY /
+      ((getDocHeight() -
+        window.innerHeight +
+        document.getElementById("footer").offsetHeight -
+        20) /
+        100);
+    document.getElementById("progress").style = `height: ${ratio}%`;
   });
 };

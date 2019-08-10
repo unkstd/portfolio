@@ -1,5 +1,7 @@
 const merge = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+MinifyPlugin = require("babel-minify-webpack-plugin");
 const common = require("./webpack.common");
 
 module.exports = merge(common, {
@@ -14,7 +16,12 @@ module.exports = merge(common, {
           enforce: true
         }
       }
-    }
+    },
+    minimizer: [
+      new UglifyJsPlugin({
+        test: /\.js(\?.*)?$/i
+      })
+    ]
   },
   module: {
     rules: [
@@ -34,5 +41,5 @@ module.exports = merge(common, {
       }
     ]
   },
-  plugins: []
+  plugins: [new MinifyPlugin()]
 });
