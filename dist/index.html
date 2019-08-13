@@ -57,7 +57,7 @@
 
       gtag("config", "UA-145047880-1");
     </script>
-  <link href="vendors.fff2940d57330c1d5c5f.css" rel="stylesheet"><link href="app.fff2940d57330c1d5c5f.css" rel="stylesheet"></head>
+  <link href="vendors.5bfee0117f9b07ad00da.css" rel="stylesheet"><link href="app.5bfee0117f9b07ad00da.css" rel="stylesheet"></head>
   <body>
     <noscript>
       JavaScript is disabled! Why you want to do so? Please enable JavaScript in
@@ -162,7 +162,6 @@
                         <ul>
                           <li>WordPress</li>
                           <li>WebPack</li>
-                          <li>Mobile friendly</li>
                         </ul>
                       </div>
                       <a class="goTo" href="https://tattoo-laboratory.ru">
@@ -205,6 +204,41 @@
                       </a>
                       <div class="githubLink">
                         <a href="https://github.com/unkstd/minimo">
+                          <svg
+                            viewBox="0 0 512 512"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="m256 0c-140.61 0-256 115.39-256 256 0 119.99 84.195 228.98 196 256v-84.695c-11.078 2.4258-21.273 2.4961-32.551-0.82813-15.129-4.4648-27.422-14.543-36.547-29.91-5.8164-9.8125-16.125-20.453-26.879-19.672l-2.6367-29.883c23.254-1.9922 43.371 14.168 55.312 34.23 5.3047 8.9219 11.41 14.152 19.246 16.465 7.5742 2.2305 15.707 1.1602 25.184-2.1875 2.3789-18.973 11.07-26.074 17.637-36.074v-0.015624c-66.68-9.9453-93.254-45.32-103.8-73.242-13.977-37.074-6.4766-83.391 18.238-112.66 0.48047-0.57031 1.3477-2.0625 1.0117-3.1055-11.332-34.23 2.4766-62.547 2.9844-65.551 13.078 3.8672 15.203-3.8906 56.809 21.387l7.1914 4.3203c3.0078 1.793 2.0625 0.76953 5.0703 0.54297 17.371-4.7188 35.684-7.3242 53.727-7.5586 18.18 0.23438 36.375 2.8398 54.465 7.75l2.3281 0.23438c-0.20312-0.03125 0.63281-0.14844 2.0352-0.98438 51.973-31.48 50.105-21.191 64.043-25.723 0.50391 3.0078 14.129 31.785 2.918 65.582-1.5117 4.6562 45.059 47.301 19.246 115.75-10.547 27.934-37.117 63.309-103.8 73.254v0.015624c8.5469 13.027 18.816 19.957 18.762 46.832v105.72c111.81-27.016 196-136.01 196-256 0.003906-140.61-115.39-256-256-256z"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="project">
+                <div
+                  class="project_wrapper"
+                  style="background: url('./assets/img/projects/piroll.jpg');background-size: cover;background-position: center;"
+                >
+                  <div class="wrapperOnHover">
+                    <div class="center">
+                      <h3 class="title">Piroll</h3>
+                      <i class="year">2019</i>
+                      <div class="desc">
+                        <ul>
+                          <li>WebPack</li>
+                          <li>Landing</li>
+                          <li>PSD Template</li>
+                        </ul>
+                      </div>
+                      <a class="goTo" href="./projects/piroll/index.html">
+                        Visit site
+                      </a>
+                      <div class="githubLink">
+                        <a href="https://github.com/unkstd/piroll">
                           <svg
                             viewBox="0 0 512 512"
                             xmlns="http://www.w3.org/2000/svg"
@@ -263,5 +297,14 @@
         </div>
       </footer>
     </div>
-  <script type="text/javascript" src="assets/js/vendors.fff2940d57330c1d5c5f.js"></script><script type="text/javascript" src="assets/js/app.fff2940d57330c1d5c5f.js"></script></body>
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
+  <script type="text/javascript" src="assets/js/vendors.5bfee0117f9b07ad00da.js"></script><script type="text/javascript" src="assets/js/app.5bfee0117f9b07ad00da.js"></script></body>
 </html>
