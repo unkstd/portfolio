@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const WorkboxPlugin = require("workbox-webpack-plugin");
+const HtmlMinifierPlugin = require("html-minifier-webpack-plugin");
 
 const PATHS = {
   src: path.join(__dirname, "../src"),
@@ -69,6 +70,16 @@ module.exports = {
       template: `${PATHS.src}/index.html`,
       hash: false,
       filename: "./index.html"
+    }),
+    new HtmlMinifierPlugin({
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeScriptTypeAttributes: true,
+      removeStyleLinkTypeAttributes: true,
+      useShortDoctype: true,
+      minifyCSS: true,
+      minifyJS: true
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
